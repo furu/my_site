@@ -7,7 +7,7 @@ import           Hakyll
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith config $ do
     -- Compress CSS
     match "css/*" $ do
         route   idRoute
@@ -61,3 +61,9 @@ postList sortFilter = do
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list
+
+
+--------------------------------------------------------------------------------
+config :: Configuration
+config = defaultConfiguration { deployCommand = command }
+    where command = "./site rebuild && rsync -avz ./_site/ arch:www/my_site"
