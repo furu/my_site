@@ -21,5 +21,7 @@ EOT
     else
       puts "Already exist `#{file_name}`."
     end
+
+    sh "mvim #{file_path}"
   end
 end
