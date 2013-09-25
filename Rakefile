@@ -6,7 +6,7 @@ namespace :post do
     markdown_extension = 'md'
     date = Time.now.strftime('%Y-%m-%d')
     file_name = "#{date}-#{args[:base_file_name]}.#{markdown_extension}"
-    file_path = "#{Dir.pwd}/posts/#{file_name}"
+    file_path = File.join(Dir.pwd, 'posts', file_name)
     template = <<EOT
 ---
 title: 
