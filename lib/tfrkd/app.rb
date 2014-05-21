@@ -12,7 +12,9 @@ module Tfrkd
       register Sinatra::Reloader
     end
 
-    use GithubHook
+    configure :production do
+      use GithubHook
+    end
 
     set :root, File.expand_path('../../..', __FILE__)
     set :articles, []
