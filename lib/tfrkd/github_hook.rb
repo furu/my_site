@@ -21,14 +21,17 @@ module Tfrkd
     end
 
     post '/update' do
-      settings.parse_git
-
-      app.settings.reset!
-      load app.settings.app_file
-
       content_type :txt
+
       if settings.autopull?
         `git pull 2>&1`
+
+        settings.parse_git
+
+        app.settings.reset!
+        load app.settings.app_file
+
+        'reload!'
       else
         'ok'
       end
