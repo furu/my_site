@@ -26,9 +26,7 @@ module Tfrkd
     post '/update' do
       content_type :txt
 
-      if settings.autopull?
-        `git pull 2>&1`
-      end
+      settings.autopull? && `git pull 2>&1`
 
       settings.parse_git
 
