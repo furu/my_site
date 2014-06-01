@@ -12,12 +12,15 @@ module Tfrkd
     end
 
     set(:autopull) { production? }
+    set(:cached) { production? }
     parse_git
 
     before do
-      cache_control :public, :must_revalidate
-      etag settings.commit_hash
-      last_modified settings.commit_date
+      if settings.cached?
+        cache_control :public, :must_revalidate
+        etag settings.commit_hash
+        last_modified settings.commit_date
+      end
     end
 
     post '/update' do
@@ -25,16 +28,14 @@ module Tfrkd
 
       if settings.autopull?
         `git pull 2>&1`
-
-        settings.parse_git
-
-        app.settings.reset!
-        load app.settings.app_file
-
-        'reload!'
-      else
-        'ok'
       end
+
+      settings.parse_git
+
+      app.settings.reset!
+      load app.settings.app_file
+
+      'reloaded!'
     end
   end
 end
