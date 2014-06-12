@@ -9,4 +9,6 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
   gem 'rubocop'
+
+  gem 'rerun'
 end
