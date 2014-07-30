@@ -1,5 +1,5 @@
 ---
-title: @foo and @bar just retweeted @buz Tweet
+title: "@foo and @bar just retweeted @buz Tweet"
 ---
 
 iOS の公式 Twitter クライアントのバージョン 6.10 における話。
