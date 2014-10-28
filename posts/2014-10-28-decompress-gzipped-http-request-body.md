@@ -9,15 +9,15 @@ Nginx + Phusion Passenger + Rails という構成のうぇっぶあぷりけー�
 
 * Apache の [mod_deflate](http://httpd.apache.org/docs/2.2/en/mod/mod_deflate.html) を使う
 * Rack ミドルウェアを書く
-  - https://gist.github.com/relistan/2109707
-  - https://github.com/andrhamm/degzipper
-  - https://github.com/tdtds/rack-request_decompressor
+  - [https://gist.github.com/relistan/2109707](https://gist.github.com/relistan/2109707)
+  - [https://github.com/andrhamm/degzipper](https://github.com/andrhamm/degzipper)
+  - [https://github.com/tdtds/rack-request_decompressor](https://github.com/tdtds/rack-request_decompressor)
 
-Nginx には [ngx_http_gunzip_module](http://nginx.org/en/docs/http/ngx_http_gunzip_module.html) というモジュールがあって、gunzip という名前からこれでできるんじゃないかと思っていたがどうやら違うっぽい。
+Nginx には [ngx\_http\_gunzip\_module](http://nginx.org/en/docs/http/ngx_http_gunzip_module.html) というモジュールがあって、gunzip という名前からこれでできるんじゃないかと思っていたがどうやら違うっぽい。
 
 [nginx で gzip_static と gunzip を使ってストレージを節約する](http://d.hatena.ne.jp/sfujiwara/20140129/1390980837)
 
-ngx_http_gunzip_module は上記のURL先のような用途で使うもののようだ。サーバ側には圧縮したファイルを置いておいてそれを配信するようにしたいが、Accept-Encoding: gzip ではないクライアントがコンテンツを受け取れなくなるので、そういうクライアントに対しては伸長してあげるかんじだと思う。
+ngx\_http\_gunzip\_module は上記のURL先のような用途で使うもののようだ。サーバ側には圧縮したファイルを置いておいてそれを配信するようにしたいが、Accept-Encoding: gzip ではないクライアントがコンテンツを受け取れなくなるので、そういうクライアントに対しては伸長してあげるかんじだと思う。
 
 Nginx は自分でモジュールを書くしかないんすかね。
 
