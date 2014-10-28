@@ -42,21 +42,21 @@ Rails ではミドルウェアを設定するのに便利な `config.middleware`
 
 `config/application.rb` だと以下のようなかんじ。
 
-```
+~~~ ruby
 module Foo
   class Application < Rails::Application
     config.middleware.use Rack::Heartbeat
   end
 end
-```
+~~~
 
 `config/environments/production.rb` だと以下のようなかんじ。
 
-```
+~~~ ruby
 Rails.application.configure do
   config.middleware.insert_before ActionDispatch::ParamsParser, Rack::Heartbeat
 end
-```
+~~~
 
 ミドルウェアを追加するには、
 
@@ -72,7 +72,7 @@ RequestDecompressor
 
 上記で挙げた URL を参考にしたというかほぼそのまま。
 
-```
+~~~ ruby
 class RequestDecompressor
   def initialize(app)
     @app = app
@@ -105,11 +105,11 @@ class RequestDecompressor
     end
   end
 end
-```
+~~~
 
 疲れたので説明を放棄し、これを `lib/request_decompressor.rb` に置いて `config/application.rb` に
 
-```
+~~~ ruby
 require File.expand_path('../../lib/request_decompressor', __FILE__)
 
 module Foo
@@ -117,7 +117,7 @@ module Foo
     config.middleware.insert_before ActionDispatch::ParamsParser, RequestDecompressor
   end
 end
-```
+~~~
 
 を書く。`ActionDispatch::ParamsParser` の前に RequestDecompressor を追加したのは、パラメータを解析する前にボディ部を伸長しないと ActionDispatch::ParamsParser がうまく処理できないからでしょう。ちなみに Rails アプリケーションのミドルウェアスタックを確認したい場合、`rake middleware` で確認できるよ。
 
