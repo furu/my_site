@@ -1,5 +1,5 @@
 ---
-title: Content-Encoding: gzip な HTTPリクエストの Decompression
+title: "Content-Encoding: gzip な HTTPリクエストの Decompression"
 ---
 
 WIP
