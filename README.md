@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/furu/my_site/badges/gpa.svg)](https://codeclimate.com/github/furu/my_site)
+
 [続きはWebで](http://tfrkd.org)
 
 このサイトは、
