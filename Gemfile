@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'redcarpet'
 gem 'thin'
+gem 'builder'
 
 group :development do
   gem 'pry'

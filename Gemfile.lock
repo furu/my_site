@@ -3,6 +3,7 @@ GEM
   specs:
     ast (2.0.0)
     backports (3.6.0)
+    builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
@@ -74,6 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   pry
   pry-byebug
   redcarpet

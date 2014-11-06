@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'ostruct'
 require 'time'
 require 'yaml'
+require 'builder'
 
 module Tfrkd
   class App < Sinatra::Base
@@ -48,6 +49,11 @@ module Tfrkd
 
     get '/log' do
       erb :archive
+    end
+
+    get '/log/feed.atom' do
+      content_type 'application/atom+xml', charset: 'utf-8'
+      builder :feed
     end
   end
 end
