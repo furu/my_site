@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>
+      <% if request.path_info =~ /\/log\/.*/ %>
+        <%= h "#{article.title} | #{settings.site_title}" %>
+      <% else %>
+        <%= h settings.site_title %>
+      <% end %>
+    </title>
     <link rel="stylesheet" media="screen" href="/css/github-markdown.css">
     <link href="/log/feed.atom" rel="alternate" title="ATOM" type="application/atom+xml">
     <style>

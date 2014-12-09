@@ -3,6 +3,7 @@ require 'ostruct'
 require 'time'
 require 'yaml'
 require 'builder'
+require 'cgi'
 
 module Tfrkd
   class App < Sinatra::Base
@@ -13,11 +14,18 @@ module Tfrkd
       register Sinatra::Reloader
     end
 
+    helpers do
+      def h(str)
+        ::CGI.escape_html(str)
+      end
+    end
+
     use GithubHook
 
     set :root, File.expand_path('../../..', __FILE__)
     set :articles, []
     set :app_file, __FILE__
+    set :site_title, '49.212.143.129'
 
     Dir.glob("#{root}/posts/*.md") do |file|
       meta, content = File.read(file).split("\n\n", 2)

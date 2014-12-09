@@ -1,7 +1,7 @@
 xml.instruct! :xml, version: '1.0'
 xml.feed(xmlns: 'http://www.w3.org/2005/Atom') do
   xml.id url('/log')
-  xml.title 'log - 49.212.143.129'
+  xml.title "log - #{settings.site_title}"
   xml.author do
     xml.name 'furu'
     xml.email 'ba09219@gmail.com'
