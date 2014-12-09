@@ -6,6 +6,7 @@
     <%= article.date.strftime("%Y/%m/%d") %>
   </time>
   <section class="content">
-    <%= markdown article.content %>
+    <%= markdown article.content,
+      autolink: true, no_intra_emphasis: true, fenced_code_blocks: true %>
   </section>
 </article>
