@@ -2,7 +2,7 @@
 title: 上下左右中央に配置する CSS に関する記録
 ---
 
-4つ発見した。書きなぐりです。
+4つ発見した。書きなぐりです。信頼性は低い。
 
 display: table-cell なやつ
 ---
@@ -68,6 +68,12 @@ flexbox なやつ
 </div>
 
 .outer {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .inner {
