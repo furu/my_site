@@ -13,3 +13,8 @@ group :development do
 
   gem 'rerun'
 end
+
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-withrsync'
+gem 'capistrano-thin'
