@@ -20,12 +20,20 @@ module Tfrkd
       end
     end
 
-    use GithubHook
+    def self.parse_git
+      sha1, date = `git log HEAD~1..HEAD --pretty=format:'%h^%ci'`
+        .strip
+        .split('^')
+      set :commit_hash, sha1
+      set :commit_date, Time.parse(date)
+    end
+    parse_git
 
     set :root, File.expand_path('../../..', __FILE__)
     set :articles, []
     set :app_file, __FILE__
     set :site_title, '49.212.143.129'
+    set(:cached) { production? }
 
     Dir.glob("#{root}/posts/*.md") do |file|
       meta, content = File.read(file).split("\n\n", 2)
@@ -50,6 +58,14 @@ module Tfrkd
 
     articles.sort_by! { |article| article.date }
     articles.reverse!
+
+    before do
+      if settings.cached?
+        cache_control :public, :must_revalidate
+        etag settings.commit_hash
+        last_modified settings.commit_date
+      end
+    end
 
     get '/' do
       erb :index
