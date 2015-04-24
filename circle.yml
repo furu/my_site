@@ -6,6 +6,10 @@ machine:
     version:
       2.2.0
 
+test:
+  override:
+    - echo 'No Tests. So skip it :)'
+
 deployment:
   production:
     branch: master
