@@ -3,3 +3,6 @@ _site
 site
 site.hi
 site.o
+
+.bundle
+vendor/bundle
