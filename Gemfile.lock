@@ -15,9 +15,6 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-thin (1.1.0)
-      capistrano (~> 3.0)
-      thin (~> 1.6)
     capistrano-withrsync (0.1.2)
       capistrano (>= 3.1)
     celluloid (0.16.0)
@@ -100,7 +97,6 @@ DEPENDENCIES
   builder
   capistrano
   capistrano-bundler
-  capistrano-thin
   capistrano-withrsync
   pry
   pry-byebug

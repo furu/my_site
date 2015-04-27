@@ -38,6 +38,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids')
 set :rsync_options, %w(--recursive --delete)
 
 namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :sudo, 'supervisorctl restart tfrkd.org'
+    end
+  end
 
   after :publishing, :restart
 

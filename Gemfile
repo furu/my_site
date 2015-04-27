@@ -17,4 +17,3 @@ end
 gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-withrsync'
-gem 'capistrano-thin'
