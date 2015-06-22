@@ -7,13 +7,6 @@ require 'cgi'
 
 module Tfrkd
   class App < Sinatra::Base
-    configure :development do
-      require 'pry'
-      require 'sinatra/reloader'
-
-      register Sinatra::Reloader
-    end
-
     helpers do
       def h(str)
         ::CGI.escape_html(str)
