@@ -11,8 +11,8 @@ group :development do
   gem 'rubocop'
 
   gem 'rerun'
-end
 
-gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-withrsync'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-withrsync'
+end
