@@ -15,3 +15,7 @@ deployment:
     branch: master
     commands:
       - bundle exec cap production deploy
+
+notify:
+  webhooks:
+    - url: https://zapier.com/hooks/catch/3j7y00/
