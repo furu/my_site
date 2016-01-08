@@ -8,6 +8,7 @@ xml.feed(xmlns: 'http://www.w3.org/2005/Atom') do
   end
   xml.updated Date.parse(settings.articles.first.date.to_s).rfc3339
   xml.link type: 'application/atom+xml', rel: 'self', href: url('/log/feed.atom')
+  xml.link rel: 'hub', href: 'http://log-tfrkd.superfeedr.com/'
 
   settings.articles.take(5).each do |article|
     xml.entry do
