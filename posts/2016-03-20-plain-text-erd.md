@@ -12,7 +12,7 @@ RDBのテーブル間の関係を把握するのにER図は便利です。ER図�
 インストール
 ---
 
-erdはHaskellとGraphVizを使ってつくられているので、stackとGraphVizをあらかじめインストールしておきます。
+erdはHaskellとGraphvizを使ってつくられているので、stackとGraphvizをあらかじめインストールしておきます。
 
 そして
 
