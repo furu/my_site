@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'tfrkd.org'
 set :repo_url, 'https://github.com/furu/tfrkd.org.git'
@@ -27,7 +27,7 @@ set :deploy_to, "/home/circleci/www/#{fetch(:application)}"
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids')
+append :linked_dirs, 'log', 'tmp/pids'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
