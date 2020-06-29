@@ -4,7 +4,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "feed:build": "ts-node --project scripts/tsconfig.json scripts/buildAtomFeed.ts"
+    "feed:build": "ts-node --project scripts/tsconfig.json scripts/buildAtomFeed.ts",
+    "build:prod": "next build && next export && yarn feed:build",
+    "deploy": "yarn build:prod && netlify deploy -d out --prod"
   },
   "dependencies": {
     "date-fns": "^2.14.0",
