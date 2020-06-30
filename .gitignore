@@ -1,3 +1,4 @@
-.bundle
-vendor/bundle
-/log
+/node_modules
+/.next
+/out
+/.netlify

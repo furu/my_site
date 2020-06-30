@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "feed:build": "ts-node --project scripts/tsconfig.json scripts/buildAtomFeed.ts",
+    "build:prod": "next build && next export && yarn feed:build",
+    "deploy": "yarn build:prod && netlify deploy -d out --prod"
+  },
+  "dependencies": {
+    "date-fns": "^2.14.0",
+    "feed": "^4.2.0",
+    "gray-matter": "^4.0.2",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "remark": "^12.0.0",
+    "remark-html": "^11.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "@types/react": "^16.9.41",
+    "netlify-cli": "^2.54.0",
+    "prettier": "2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
