@@ -4,8 +4,8 @@ title: OS X を Lion から Mavericks にした
 
 昨日の土曜日にやっとアップグレードした。
 
-<a href="http://gyazo.com/cfcf1d153aad16ab550c93f7018cdbf2">
-  <img src="http://embed.gyazo.com/cfcf1d153aad16ab550c93f7018cdbf2.png" />
+<a href="https://gyazo.com/cfcf1d153aad16ab550c93f7018cdbf2">
+  <img src="https://embed.gyazo.com/cfcf1d153aad16ab550c93f7018cdbf2.png" />
 </a>
 
 もう2014年の3月で Mavericks が発売されて結構経っているし、もうそろそろ Gentoo Prefix もうまく動作するのではないかと適当な推測の元、実行に移した。
@@ -16,8 +16,8 @@ title: OS X を Lion から Mavericks にした
 
 それで肝心の Gentoo Prefix だが、うまくインストールできた。ビルドも問題なくできるし、動作もできている。
 
-<a href="http://gyazo.com/7baa334ab0b3fe605208385079711188">
-  <img src="http://embed.gyazo.com/7baa334ab0b3fe605208385079711188.png" />
+<a href="https://gyazo.com/7baa334ab0b3fe605208385079711188">
+  <img src="https://embed.gyazo.com/7baa334ab0b3fe605208385079711188.png" />
 </a>
 
 少し前、まだ Lion だったときに Gentoo Prefix を入れなおしたことがあったのだけど、そのときの経験を活かした。そのときの作業ログを Togetter にまとめている。

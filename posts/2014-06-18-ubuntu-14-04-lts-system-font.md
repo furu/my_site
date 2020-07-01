@@ -6,4 +6,4 @@ title: Ubuntu のシステムのフォントの設定
 
 Unity Tweak Tool を開いて、`Appearance` の `Fonts` という項目で変更できる。
 
-<img src="http://i.gyazo.com/e82d0338695cacd503bada9592736f56.png">
+<img src="https://i.gyazo.com/e82d0338695cacd503bada9592736f56.png">
